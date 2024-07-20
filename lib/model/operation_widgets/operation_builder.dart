@@ -58,76 +58,75 @@ class OperationDetails extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: IsResponsive.isMobileScreen(context) ? 2 : 4,
           crossAxisSpacing: !IsResponsive.isMobileScreen(context) ? 15 : 10,
+       //mainAxisSpacing: !IsResponsive.isMobileScreen(context) ? 5.h : 10,
           ),
       itemBuilder: (context, index) {
-        return Column(
-          children: [
-            Container(
-              padding: EdgeInsetsDirectional.all(5.sp),
-              //margin: EdgeInsetsDirectional.all(1.w),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(15.sp),
-                  color: Colors.white),
-              child: Column(
+        return Container(
+
+          margin:  EdgeInsetsDirectional.all(1.w),
+
+          padding: EdgeInsetsDirectional.all(5.sp),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(15.sp),
+              color: Colors.white),
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  Row(
+                  operationBodyView[index].titleIcon,
+                  Text(operationBodyView[index].title)
+                ],
+              ),
+              Row(
+                children: [
+                  Column(
                     children: [
-                      operationBodyView[index].titleIcon,
-                      Text(operationBodyView[index].title)
+                      Text(
+                        operationBodyView[index].moneyValue,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
-                  Row(
+                  SizedBox(
+                    width: 1.w,
+                  ),
+                  Column(
                     children: [
-                      Column(
+                      Row(
                         children: [
-                          Text(
-                            operationBodyView[index].moneyValue,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                          operationBodyView[index].earningsIcon,
+                          SizedBox(
+                            width: 1.w,
                           ),
+                          Text(
+                            '16%',
+                            style: TextStyle(
+                              color: Colors.green,
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
                         width: 1.w,
                       ),
-                      Column(
+                      Row(
                         children: [
-                          Row(
-                            children: [
-                              operationBodyView[index].earningsIcon,
-                              SizedBox(
-                                width: 1.w,
-                              ),
-                              Text(
-                                '16%',
-                                style: TextStyle(
-                                  color: Colors.green,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            width: 1.w,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                operationBodyView[index].endString,
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 10.sp),
-                              )
-                            ],
-                          ),
+                          Text(
+                            operationBodyView[index].endString,
+                            style: TextStyle(
+                                color: Colors.grey, fontSize: 10.sp),
+                          )
                         ],
-                      )
+                      ),
                     ],
-                  ),
+                  )
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
       itemCount: operationBodyView.length,

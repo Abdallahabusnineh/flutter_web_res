@@ -23,6 +23,7 @@ class ImageBuilder extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: IsResponsive.isMobileScreen(context) ? 1 : 2,
         crossAxisSpacing: !IsResponsive.isMobileScreen(context) ? 15 : 10,
+        mainAxisSpacing: IsResponsive.isMobileScreen(context) ? 3.h : 5.h,
       ),
       itemCount: imageBuilder.length,
       itemBuilder: (context, index) {

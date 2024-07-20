@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         body: Row(
           children: [
             IsResponsive.isWebScreen(context)?Expanded(
-              flex: 1,
+
               child: SizedBox(
                   width: MediaQuery.of(context).size.width * .2,
                   child:CustomWidget.webDrawer()),
