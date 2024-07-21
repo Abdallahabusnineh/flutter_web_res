@@ -9,7 +9,6 @@ import '../model/operation_widgets/operation_builder.dart';
 
 class BodyView extends StatelessWidget {
   const BodyView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(

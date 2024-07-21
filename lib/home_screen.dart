@@ -27,21 +27,21 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: IsResponsive.isWebScreen(context)?null:CustomWidget.mobileAppBar(),
       backgroundColor: Colors.grey.shade100,
-      drawer: IsResponsive.isWebScreen(context)?null:CustomWidget.webDrawer(),
+      drawer: IsResponsive.isWebScreen(context)?null:CustomWidget.drawer(),
         body: Row(
           children: [
             IsResponsive.isWebScreen(context)?Expanded(
 
               child: SizedBox(
                   width: MediaQuery.of(context).size.width * .2,
-                  child:CustomWidget.webDrawer()),
+                  child:CustomWidget.drawer()),
             ):const SizedBox(),
            // IsResponsive.isWebScreen(context)?AppBar():const SizedBox(),
             Expanded(
               flex: 3,
                 child: Padding(
                   padding: EdgeInsets.all(1.w),
-                  child: BodyView(),
+                  child: const BodyView(),
                 ))
           ],
         ),

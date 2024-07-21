@@ -119,7 +119,7 @@ static  Widget webAppBar() {
     );
   }
 
-  static webDrawer() {
+  static drawer() {
     return Drawer(
       elevation: 5,
       backgroundColor: Colors.white,

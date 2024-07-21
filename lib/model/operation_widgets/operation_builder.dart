@@ -62,9 +62,7 @@ class OperationDetails extends StatelessWidget {
           ),
       itemBuilder: (context, index) {
         return Container(
-
           margin:  EdgeInsetsDirectional.all(1.w),
-
           padding: EdgeInsetsDirectional.all(5.sp),
           decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
@@ -72,57 +70,61 @@ class OperationDetails extends StatelessWidget {
               color: Colors.white),
           child: Column(
             children: [
-              Row(
+              Column(
                 children: [
-                  operationBodyView[index].titleIcon,
-                  Text(operationBodyView[index].title)
-                ],
-              ),
-              Row(
-                children: [
-                  Column(
+                  Row(
                     children: [
-                      Text(
-                        operationBodyView[index].moneyValue,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      operationBodyView[index].titleIcon,
+                      Text(operationBodyView[index].title)
                     ],
                   ),
-                  SizedBox(
-                    width: 1.w,
-                  ),
-                  Column(
+                  Row(
                     children: [
-                      Row(
+                      Column(
                         children: [
-                          operationBodyView[index].earningsIcon,
-                          SizedBox(
-                            width: 1.w,
-                          ),
                           Text(
-                            '16%',
+                            operationBodyView[index].moneyValue,
                             style: TextStyle(
-                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
                             ),
-                          )
+                          ),
                         ],
                       ),
                       SizedBox(
                         width: 1.w,
                       ),
-                      Row(
+                      Column(
                         children: [
-                          Text(
-                            operationBodyView[index].endString,
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 10.sp),
-                          )
+                          Row(
+                            children: [
+                              operationBodyView[index].earningsIcon,
+                              SizedBox(
+                                width: 1.w,
+                              ),
+                              Text(
+                                '16%',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: 1.w,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                operationBodyView[index].endString,
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 10.sp),
+                              )
+                            ],
+                          ),
                         ],
-                      ),
+                      )
                     ],
-                  )
+                  ),
                 ],
               ),
             ],
