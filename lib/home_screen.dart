@@ -2,7 +2,7 @@ import 'dart:js_interop';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_web_res/core/utlis/custom_widget.dart';
+import 'package:flutter_web_res/core/utlis/constant.dart';
 import 'package:flutter_web_res/core/utlis/is_responsive.dart';
 import 'package:flutter_web_res/view/body_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -12,16 +12,6 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-      final double screenWidth = MediaQuery.of(context).size.width;
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final bool isSmallScreen = screenWidth < 600;
-    List<bool> isSelcted = [false, true, false, false];
-    final List<String> labels = [
-      'Last 24 hours',
-      'Last week',
-      'Last month',
-      'Last year'
-    ];
     print("width ${MediaQuery.of(context).size.width.toString()}");
     print("height ${MediaQuery.of(context).size.height.toString()}");
     return Scaffold(

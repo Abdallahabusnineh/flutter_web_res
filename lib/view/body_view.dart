@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_res/core/utlis/customwidget.dart';
-import 'package:flutter_web_res/core/utlis/custom_widget.dart';
+import 'package:flutter_web_res/core/utlis/constant.dart';
 import 'package:flutter_web_res/core/utlis/is_responsive.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 

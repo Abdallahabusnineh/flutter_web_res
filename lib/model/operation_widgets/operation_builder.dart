@@ -57,6 +57,7 @@ class OperationDetails extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: IsResponsive.isMobileScreen(context) ? 2 : 4,
+          childAspectRatio: IsResponsive.isMobileScreen(context) ? 2.5 : 2,
           crossAxisSpacing: !IsResponsive.isMobileScreen(context) ? 15 : 10,
        //mainAxisSpacing: !IsResponsive.isMobileScreen(context) ? 5.h : 10,
           ),

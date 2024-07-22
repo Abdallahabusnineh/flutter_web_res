@@ -1,8 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_res/core/common_widget/show_toast.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class CustomWidget {
+
+
+class CustomWidget  {
+//  static BuildContext get context => Get.context!;
+
   static PreferredSizeWidget mobileAppBar() {
     return AppBar(
       title: Text('Dashboard',
@@ -122,9 +129,11 @@ static  Widget webAppBar() {
   static drawer() {
     return Drawer(
       elevation: 5,
+
       backgroundColor: Colors.white,
       shadowColor: Colors.black,
       child: ListView(
+
         children: [
           Column(
             children: [
@@ -278,6 +287,21 @@ static  Widget webAppBar() {
                 ),
                 selectedColor: Colors.blue,
                 onTap: () {},
+              ),
+              ListTile(
+                leading: IconButton(onPressed: () {}, icon: const Icon(Icons.logout,color: Colors.black,)),
+                title: const Text('Logout'),
+                selectedColor: Colors.blue,
+
+                onTap: () {
+         //Navigator.popAndPushNamed(context, '/LoginScreenView');
+           Get.offAllNamed('/LoginScreenView');
+
+           showToast(text: 'Logout Success', state: ToastState.SUCCESS);
+                },
+              ),
+              const SizedBox(
+                height: 20,
               ),
             ],
           ),
